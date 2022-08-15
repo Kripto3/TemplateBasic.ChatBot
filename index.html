@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-ES">
+
+<head>
+    <meta name="ismobile" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <title>ChatBot</title>
+    <link rel="stylesheet" href="/src/css/index.css" />
+</head>
+
+<body>
+    <div class="chat-box">
+        <header class="header-box">
+            <div class="contenido-chat">
+                <div class="w-100 h-100 contenido-logo">
+                    <div class="contenido-logo">
+                        <img src="/src/img/logo-demo.png" class="img-logo" />
+                    </div>
+                    <div class="button-content">
+                        <button>
+                            <img src="/src/img/angle-down.svg">
+                        </button>
+                        <button onclick="reloadWebChat()">
+                            <img src="/src/img/close-icon.svg">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="webchat" class="web-chat-contenido" role="main"></div>
+    </div>
+
+    <script>
+        // Set  the CSS rules.
+        const styleSet = window.WebChat.createStyleSet({
+            bubbleBackground: "#eceff1",
+            bubbleFromUserBackground: "#1d558c",
+            bubbleFromUserTextColor: "white",
+            bubbleBorderRadius: "5px",
+            bubbleFromUserBorderRadius: "5px",
+            botAvatarBackgroundColor: "#FFFF",
+        });
+
+        // After generated, you can modify the CSS rules.
+        // Change font family and weight.
+        styleSet.textContent = {
+            ...styleSet.textContent,
+            fontFamily: "Arial,normal",
+        };
+
+        // Set the avatar options.
+        const avatarOptions = {
+            botAvatarInitials: "H",
+            botAvatarImage: "/src/img/avatar.png",
+        };
+        const store = window.WebChat.createStore({});
+        window.WebChat.renderWebChat({
+                directLine: window.WebChat.createDirectLine({
+                    token: "QcQJHJOuEAY.gYwDYQNIDaxhLgwl07RLDbXlRORdAGv5Nhe7VhD10Co",
+                }),
+                styleSet,
+                styleOptions: avatarOptions,
+                store,
+            },
+            document.getElementById("webchat")
+        );
+
+        function reloadWebChat() {
+            // document.getElementById("webchat").innerHTML = "";
+            const store = window.WebChat.createStore({});
+            window.WebChat.renderWebChat({
+                    directLine: window.WebChat.createDirectLine({
+                        token: "QcQJHJOuEAY.gYwDYQNIDaxhLgwl07RLDbXlRORdAGv5Nhe7VhD10Co",
+                    }),
+                    styleSet,
+                    styleOptions: avatarOptions,
+                    store,
+                },
+                document.getElementById("webchat")
+            );
+        }
+    </script>
+</body>
+
+</html>

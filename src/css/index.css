@@ -1,0 +1,76 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#webchat {
+    height: 100%;
+    width: 100%;
+}
+
+.contenido-chat {
+    border: none;
+}
+
+.chat-box {
+    background-color: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    border-top: 4px solid rgb(50, 148, 41);
+    border-bottom: 4px solid rgb(50, 148, 41);
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-width: 320px;
+    position: fixed;
+    top: 10px;
+    width: 100%;
+}
+
+.header-box {
+    background-color: #4CAF50;
+}
+
+.web-chat-contenido {
+    flex: 1 1;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.contenido-chat button {
+    width: 40px;
+    height: 40px;
+    background-color: initial;
+    border: 0;
+    color: #000;
+    outline: 0;
+}
+
+.button-content {
+    display: inline-flex;
+}
+
+.contenido-chat button img {
+    width: 77%;
+}
+
+.img-logo {
+    width: 21%;
+    padding-bottom: 4px;
+}
+
+.contenido-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
